@@ -832,7 +832,7 @@ function App(){
       )
     ),
     showSettings&&h(Settings,{onClose:function(){setShowSettings(false)},dark:dark,onToggleDark:function(){setDark(function(d){return !d})},entries:entries,projects:projects}),
-    quickAdd&&h(QuickAdd,{projectId:activeProjectId,projects:props,onSave:saveEntry,onCancel:function(){setQuickAdd(false)}}),
+    quickAdd&&h(QuickAdd,{projectId:activeProjectId,projects:projects,onSave:saveEntry,onCancel:function(){setQuickAdd(false)}}),
     editing&&h(EntryForm,{entry:editing,project:activeProject,onSave:saveEntry,onCancel:function(){setEditing(null)}}),
     editProj&&h(ProjModal,{project:editProj,onSave:saveProject,onCancel:function(){setEditProj(null)}}),
     showDel&&h("div",{className:"overlay",onClick:function(){setShowDel(null)}},
